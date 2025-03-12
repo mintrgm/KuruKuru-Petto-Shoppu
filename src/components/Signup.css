@@ -10,30 +10,82 @@
   
   .signup-box {
     background: #f5e4c3;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 700px; 
+    height: 650px; 
+    padding: 40px;
+    border: 2px solid black;
+    border-radius: 25px; 
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px; 
   }
   
-  h2 {
+  .signup-title {
     color: #BBA569;
     font-family: 'Walter Turncoat', cursive;
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .signup-label {
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 1.2rem;
+    margin-bottom: 8px; 
+    display: block;
   }
   
   input {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 12px;
+    margin-bottom: 20px;
     border-radius: 15px;
     border: 2px solid black;
+    background: none;
+    font-size: 1.2rem;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   }
   
-  .signup-btn {
-    background-color: #BBA569;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+  .location-btn {
+    font-family: 'Single Day', cursive;
+    font-size: 1.2rem;
+    background-color: #698FBB; 
+    border: 2px solid black;
+    border-radius: 50px;
+    padding: 12px 20px;
     cursor: pointer;
+    width: 100%;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px; 
+  }
+  
+  .location-btn:hover {
+    background-color: white;
+    color: #4A90E2;
+    transform: scale(1.05);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .signup-btn {
+    background-color: #86BB69;
+    font-family: 'Single Day', cursive;
+    font-size: 1.2rem;
+    border: 2px solid black;
+    border-radius: 50px;
+    padding: 12px 35px;
+    cursor: pointer;
+    width: 100%; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .signup-btn:hover {
+    background-color: white;
+    color: #86BB69;
+    transform: scale(1.05);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
   }
   
