@@ -1,0 +1,39 @@
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../assets/cats.png') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #BFDEF8;
+  }
+  
+  .signup-box {
+    background: #f5e4c3;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    color: #BBA569;
+    font-family: 'Walter Turncoat', cursive;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 15px;
+    border: 2px solid black;
+  }
+  
+  .signup-btn {
+    background-color: #BBA569;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
