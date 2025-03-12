@@ -1,0 +1,76 @@
+body {
+  background-color: #F0F1E3;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid black;
+  position: fixed;
+  width: 97.5%;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-left: 50px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: 'Walter Turncoat', cursive;
+  transition: all 0.3s ease-in-out;
+  padding: 5px 10px;
+}
+
+.nav-links a.collections-inactive {
+  opacity: 0.5; 
+}
+
+.nav-right {
+  display: flex;
+  gap: 20px;
+  margin-right: 50px; 
+}
+
+.login,
+.signup {
+  font-family: 'Single Day', cursive;
+  font-size: 1.2rem;
+  background-color: #86BB69;
+  color: black;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 8px 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.signup {
+  background-color: #BBA569;
+}
+
+.login:hover {
+  background-color: white;
+  color: #86BB69;
+}
+
+.signup:hover {
+  background-color: white;
+  color: #BBA569;
+}
+
+.nav-links a.collections-inactive:hover {
+  opacity: 1; 
+}

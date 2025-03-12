@@ -1,0 +1,12 @@
+.home {
+    background-color: #F0F1E3;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+
+  .home-image {
+    margin-top: 100px;
+  }
+
+ 
