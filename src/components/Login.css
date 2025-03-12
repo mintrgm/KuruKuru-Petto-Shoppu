@@ -1,9 +1,8 @@
 .login-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding-top: 80px;
+    align-items: center;
+    height: 100vh;
     background: url('../assets/cats.png') no-repeat center center fixed;
     background-size: cover;
     background-color: #BFDEF8;
@@ -81,4 +80,3 @@
   .new-user-btn {
     background-color: #BB6971;
   }
-  
