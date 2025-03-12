@@ -76,7 +76,21 @@
   .submit-btn {
     background-color: #86BB69;
   }
+
+  .submit-btn:hover {
+    background-color: white;
+    color: #86BB69;
+    transform: scale(1.05); 
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+  }
   
   .new-user-btn {
     background-color: #BB6971;
+  }
+  
+  .new-user-btn:hover {
+    background-color: white;
+    color: #BB6971;
+    transform: scale(1.05); 
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3); 
   }
