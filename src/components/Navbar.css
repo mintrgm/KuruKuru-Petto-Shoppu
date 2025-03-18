@@ -41,8 +41,8 @@ body {
 
 .nav-right {
   display: flex;
-  gap: 20px;
-  margin-right: 50px; 
+  align-items: center;
+  gap: 25px;
 }
 
 .login,
@@ -73,4 +73,44 @@ body {
 
 .nav-links a.collections-inactive:hover {
   opacity: 1; 
+}
+
+.cart-icon {
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+}
+
+.cart-icon:hover {
+  transform: scale(1.5); 
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.profile-pic:hover {
+  border: 2px solid #69B6BB;
+  transform: scale(1.05); 
+}
+
+.logout {
+  font-family: 'Single Day', cursive;
+  font-size: 1.2rem;
+  background-color: #69B6BB;
+  color: black;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 8px 30px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: white;
+  color: #69B6BB;
 }
