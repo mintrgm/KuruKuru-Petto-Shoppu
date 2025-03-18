@@ -1,16 +1,28 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../App";
+import defaultAvatar from "../assets/avatar.jpeg";
 import "./Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("Logging in with", email, password);
-    navigate("/"); // Redirect to home page after login
+  
+    const userData = {
+      name: "Saina Maharjan",
+      email,
+      profilePicture: defaultAvatar, 
+    };
+
+    login(userData); 
+    console.log("User logged in:", userData);
+    
+    navigate("/profile");
   };
 
   return (
@@ -25,7 +37,7 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          <p className="email-info">We’ll never share your e-mail with anyone :)</p> {/* Added this line */}
+          <p className="email-info">We’ll never share your e-mail with anyone :)</p>
           <label>PASSWORD</label>
           <input
             type="password"
@@ -34,7 +46,7 @@ const Login = () => {
             required
           />
           <div className="button-container">
-            <button type="submit" className="submit-btn">Submit</button>
+            <button type="submit" className="submit-btn">Log In</button>
             <button type="button" className="new-user-btn" onClick={() => navigate("/signup")}>
               New User
             </button>
