@@ -1,35 +1,49 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "../App";
 import "./Navbar.css";
+import cartIcon from "../assets/cart.png"; 
+import defaultAvatar from "../assets/avatar.jpeg"; 
 
 const Navbar = () => {
-  const [activePage, setActivePage] = useState("home");
+  const { user, logout } = useAuth();
 
   return (
     <nav className="navbar">
       <h1 className="logo">KuruKuru Petto Shoppu</h1>
       <ul className="nav-links">
         <li>
-          <a
-            href="/"
-            className={activePage === "home" ? "home-active" : ""}
-            onClick={() => setActivePage("home")}
-          >
-            HOME
-          </a>
+          <Link to="/">HOME</Link>
         </li>
         <li>
-          <a
-            href="/collections"
-            className={`${activePage === "collections" ? "collections-active" : "collections-inactive"}`}
-            onClick={() => setActivePage("collections")}
-          >
-            COLLECTIONS
-          </a>
+          <Link to="/collections">COLLECTIONS</Link>
         </li>
       </ul>
       <div className="nav-right">
-        <button className="login">Log in</button>
-        <button className="signup">Sign up</button>
+        {user ? (
+          <>
+            <Link to="/cart">
+              <img src={cartIcon} alt="Cart" className="cart-icon" />
+            </Link>
+            <Link to="/profile">
+              <img
+                src={user.profilePicture || defaultAvatar}
+                alt="Profile"
+                className="profile-pic"
+              />
+            </Link>
+            <button className="logout" onClick={logout}>Logout</button>
+          </>
+        ) : (
+          <>
+            <Link to="/login">
+              <button className="login">Log in</button>
+            </Link>
+            <Link to="/signup">
+              <button className="signup">Sign up</button>
+            </Link>
+          </>
+        )}
       </div>
     </nav>
   );
