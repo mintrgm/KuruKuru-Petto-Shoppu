@@ -1,0 +1,274 @@
+body {
+    background-color: #010817;
+  }
+  
+  .collections-page {
+    background-color: #010817;
+    min-height: 100vh;
+    color: white;
+  }
+  
+  /* ---------------- IMAGE SLIDER ---------------- */
+  .slider-container {
+    width: 100vw;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .slider-inner {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    height: 100%;
+  }
+  
+  .slide-image {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  
+  /* ---------------- SEARCH ---------------- */
+  .search-wrapper {
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+  }
+  
+  .search-bar {
+    display: flex;
+  }
+  
+  
+  .search-input {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding: 12px 20px;
+    width: 300px;
+    border-radius: 25px 0 0 25px;
+    font-size: 1rem;
+    outline: none;
+    font-family: 'Single Day', cursive;
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  .search-button {
+    background: white;
+    border: 2px solid white;
+    border-left: none;
+    padding: 10px 14px;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  .search-button img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .suggestions-list {
+    margin-top: 5px;
+    background-color: #111;
+    border: 1px solid white;
+    color: white;
+    font-family: 'Single Day', cursive;
+    width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 0 0 10px 10px;
+    z-index: 1000;
+    list-style: none;
+  }
+  
+  .suggestions-list li {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+  }
+  
+  .suggestions-list li:hover {
+    background-color: #333;
+  }
+  
+  /* ---------------- SLIDER DOTS ---------------- */
+  .slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: #000;
+  }
+  
+  /* ---------------- PRODUCT SECTION ---------------- */
+  .product-section {
+    background: #010817;
+    color: white;
+    padding: 40px 20px;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .section-header h2 {
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 2rem;
+    margin-left: 10px;
+  }
+  
+  .arrow-controls {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .arrow {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .arrow.flipped {
+    transform: rotate(180deg);
+  }
+  
+  .section-divider {
+    border: none;
+    height: 2px;
+    background: white;
+    margin: 10px 0 25px;
+  }
+  
+  /* ---------------- PRODUCT SCROLL ---------------- */
+  .product-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 80px;
+    padding: 10px 0 20px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .product-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* ---------------- PRODUCT CARD ---------------- */
+  .product-card {
+    min-width: 350px;
+    max-width: 350px;
+    color: black;
+    background: #87AAD7;
+    border-radius: 15px;
+    border: 2px solid white;
+    padding-bottom: 10px;
+    position: relative;
+    transition: transform 0.3s ease;
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin: 0;
+    padding: 0;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cart-hover {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+  }
+  
+  .product-card:hover .cart-hover {
+    display: block;
+  }
+  
+  .cart-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .product-name,
+  .dropdowns,
+  .product-price {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  
+  .product-name {
+    font-family: 'Single Day', cursive;
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+  
+  .dropdowns {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0 30px;
+  }
+  
+  .dropdowns select {
+    font-family: 'Single Day', cursive;
+    font-size: 1rem;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 8px 15px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  .dropdowns select:first-child {
+    background-color: #6C69BB;
+    color: black;
+  }
+  
+  .product-price {
+    font-family: 'Single Day', cursive;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
