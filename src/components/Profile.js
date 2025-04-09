@@ -12,11 +12,15 @@ const Profile = () => {
       {/* Profile Picture Positioned Separately */}
       <div className="profile-header">
         <div className="profile-image-container">
-          <img
-            src={user.profilePicture ? user.profilePicture : defaultAvatar}
+        <img
+            src={user.profilePicture || defaultAvatar}
             alt="Profile"
             className="profile-pic-large"
-          />
+            onError={(e) => {
+                              e.target.onerror = null;
+                              e.target.src = defaultAvatar;
+                            }}
+        />
         </div>
 
         {/* Personal Info Box */}
@@ -36,22 +40,24 @@ const Profile = () => {
 
       {/* Shipping Address Section */}
       <div className="address-box">
-        <h2 className="section-title">
+        <h2 className="address-title">
           SHIPPING ADDRESS
           <img src={editIcon} alt="Edit" className="edit-icon" />
         </h2>
         <hr className="section-divider" />
-        <ul>
+        <div className="address-details">
+        <ul className="address-list">
           <li>📍 Sorhakhutte, Kathmandu</li>
           <li>Kathmandu Metro 16 - Nayabazar Area</li>
           <li>Bagmati Province</li>
           <li>Kathmandu Peace Guest House, Last House</li>
         </ul>
+        </div>
       </div>
 
       {/* Order History Section */}
       <div className="order-history-box">
-        <h2 className="section-title">
+        <h2 className="order-title">
           ORDER HISTORY
           <img src={editIcon} alt="Edit" className="edit-icon" />
         </h2>
