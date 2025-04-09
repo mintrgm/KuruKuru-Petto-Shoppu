@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Profile from "./components/Profile";
-
+import Collections from "./components/Collections"; 
 // Create Auth Context
 const AuthContext = createContext();
 
@@ -30,6 +30,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/collections" element={<Collections />} /> 
           <Route path="/login" element={!user ? <Login /> : <Navigate to="/profile" />} />
           <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/profile" />} />
           <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" />} />
