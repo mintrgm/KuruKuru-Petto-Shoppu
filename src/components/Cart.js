@@ -6,14 +6,12 @@ import { useAuth } from "../App";
 import deleteIcon from "../assets/delete.png";
 
 const Cart = ({ visible, onClose }) => {
-  const { cartItems, setCartItems } = useCart();
+  const { cartItems, removeFromCart } = useCart();
   const { user } = useAuth();
   const navigate = useNavigate();
 
-  const handleDelete = (index) => {
-    const updatedCart = [...cartItems];
-    updatedCart.splice(index, 1);
-    setCartItems(updatedCart);
+  const handleDelete = (name, color) => {
+    removeFromCart(name, color);
   };
 
   const handleCheckout = () => {
@@ -60,12 +58,9 @@ const Cart = ({ visible, onClose }) => {
                 </td>
                 <td>Rs. {item.price}/-</td>
                 <td>
-                  <img
-                    src={deleteIcon}
-                    alt="delete"
-                    className="delete-icon"
-                    onClick={() => handleDelete(i)}
-                  />
+                  <button className="delete-btn" onClick={() => handleDelete(item.name, item.color)}>
+                    <img src={deleteIcon} alt="delete" className="delete-icon" />
+                  </button>
                 </td>
               </tr>
             ))}
