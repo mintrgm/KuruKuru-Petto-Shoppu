@@ -50,27 +50,59 @@
     font-size: 1.2rem;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   }
-  
-  .location-btn {
-    font-family: 'Single Day', cursive;
-    font-size: 1.2rem;
-    background-color: #698FBB; 
-    border: 2px solid black;
-    border-radius: 50px;
-    padding: 12px 20px;
-    cursor: pointer;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
-    margin-bottom: 20px; 
-  }
-  
-  .location-btn:hover {
-    background-color: white;
-    color: #4A90E2;
-    transform: scale(1.05);
-    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
-  }
 
+  .profile-pic-upload {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 25px;
+  }
+  
+  .profile-pic-preview {
+    width: 120px; /* 👈 Bigger circle */
+    height: 120px;
+    border: 2px dashed black;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-pic-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .empty-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+  }
+  
+  /* Custom styled upload button */
+  .custom-upload-btn {
+    font-family: 'Single Day', cursive;
+    font-size: 1rem;
+    border: 2px solid black;
+    padding: 10px 20px;
+    background-color: #79a6e9;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .custom-upload-btn:hover {
+    background-color: white;
+    color: #79a6e9;
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  }  
+  
   .signup-btn {
     background-color: #86BB69;
     font-family: 'Single Day', cursive;
@@ -91,4 +123,3 @@
     transform: scale(1.05);
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
   }
-  
