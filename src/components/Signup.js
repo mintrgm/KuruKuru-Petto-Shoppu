@@ -4,31 +4,15 @@ import "./Signup.css";
 
 const Signup = () => {
   const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [profilePic, setProfilePic] = useState(null);
   const navigate = useNavigate();
 
   const handleSignup = (e) => {
     e.preventDefault();
-    console.log("Signing up with", name, address, email, password);
+    console.log("Signing up with", name, email, password, profilePic);
     navigate("/login"); 
-  };
-
-  const handleLocationClick = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setAddress(`Lat: ${latitude}, Long: ${longitude}`);
-        },
-        (error) => {
-          console.error("Error fetching location", error);
-        }
-      );
-    } else {
-      alert("Geolocation is not supported by your browser.");
-    }
   };
 
   return (
@@ -43,17 +27,6 @@ const Signup = () => {
             onChange={(e) => setName(e.target.value)}
             required
           />
-
-          <label className="signup-label">ADDRESS</label>
-          <input
-            type="text"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            required
-          />
-          <button type="button" className="location-btn" onClick={handleLocationClick}>
-            Click for Current Location
-          </button>
 
           <label className="signup-label">EMAIL ADDRESS</label>
           <input
@@ -70,6 +43,29 @@ const Signup = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+
+          {/* Profile Picture Upload */}
+          <div className="profile-pic-upload">
+            <div className="profile-pic-preview">
+              {profilePic ? (
+                <img src={URL.createObjectURL(profilePic)} alt="Preview" />
+              ) : (
+                <div className="empty-circle" />
+              )}
+            </div>
+            
+            {/* Hidden file input + custom label button */}
+            <input
+              type="file"
+              accept="image/*"
+              id="profilePicUpload"
+              onChange={(e) => setProfilePic(e.target.files[0])}
+              style={{ display: "none" }}
+            />
+            <label htmlFor="profilePicUpload" className="custom-upload-btn">
+              Upload Photo
+            </label>
+          </div>
 
           <button type="submit" className="signup-btn">Sign Up</button>
         </form>
