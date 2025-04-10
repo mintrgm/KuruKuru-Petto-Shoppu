@@ -27,6 +27,15 @@
     font-size: 5rem;
     text-align: center;
     margin-top: -5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    -webkit-text-stroke: 0.25px rgba(0, 0, 0, 0.521); 
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .login-title:hover {
+    color: rgba(235, 235, 235, 0.781);
+    -webkit-text-stroke: 1px #86BB69;
+    text-shadow: none;
   }
   
   label {
