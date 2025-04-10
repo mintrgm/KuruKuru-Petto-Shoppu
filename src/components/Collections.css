@@ -1,274 +1,806 @@
 body {
-    background-color: #010817;
+  background-color: #010817;
+}
+
+.collections-page {
+  background-color: #010817;
+  min-height: 100vh;
+}
+
+/* ---------------- IMAGE SLIDER ---------------- */
+.slider-container {
+  width: 100vw;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.slider-inner {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  height: 100%;
+}
+
+.slide-image {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* ---------------- SEARCH ---------------- */
+.search-wrapper {
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+}
+
+.search-input {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  padding: 12px 20px;
+  width: 300px;
+  border-radius: 25px 0 0 25px;
+  font-size: 1rem;
+  outline: none;
+  font-family: 'Single Day', cursive;
+  box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.3);
+}
+
+.search-button {
+  background: white;
+  border: 2px solid white;
+  border-left: none;
+  padding: 10px 14px;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.3);
+}
+
+.search-button img {
+  width: 30px;
+  height: 30px;
+}
+
+.suggestions-list {
+  margin-top: 5px;
+  background-color: #111;
+  border: 1px solid white;
+  color: white;
+  font-family: 'Single Day', cursive;
+  width: 300px;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 0 0 10px 10px;
+  z-index: 1000;
+  list-style: none;
+}
+
+.suggestions-list li {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #333;
+}
+
+.suggestions-list li:hover {
+  background-color: #333;
+}
+
+/* ---------------- SLIDER DOTS ---------------- */
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: #000;
+}
+
+/* ---------------- PRODUCT SECTION ---------------- */
+.product-section {
+  background: #010817;
+  color: white;
+  padding: 40px 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header h2 {
+  font-family: 'Walter Turncoat', cursive;
+  font-size: 3rem;
+  margin-left: 10px;
+}
+
+.arrow-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.arrow.flipped {
+  transform: rotate(180deg);
+}
+
+.section-divider {
+  border: none;
+  height: 2px;
+  background: white;
+  margin: 10px 0 25px;
+}
+
+/* ---------------- PRODUCT SCROLL ---------------- */
+.product-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 80px;
+  padding: 10px 0 20px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.product-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---------------- PRODUCT CARD ---------------- */
+.product-card {
+  min-width: 350px;
+  max-width: 350px;
+  color: black;
+  background: #C7D4FF;
+  border-radius: 15px;
+  border: 2px solid white;
+  padding-bottom: 10px;
+  position: relative;
+  transition: transform 0.3s ease;
+  box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
+  z-index: 3;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin: 0;
+  padding: 0;
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cart-hover {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+}
+
+.product-card:hover .cart-hover {
+  display: block;
+}
+
+.cart-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.product-name,
+.dropdowns,
+.product-price {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.product-name {
+  font-family: 'Single Day', cursive;
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.dropdowns {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 10px 0 30px;
+}
+
+.dropdowns select {
+  font-family: 'Single Day', cursive;
+  font-size: 1rem;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 8px 15px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.dropdowns select:first-child {
+  background-color: #7C7AB4;
+  color: black;
+}
+
+.product-price {
+  font-family: 'Single Day', cursive;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* ---------------- PRODUCTS IMAGE BANNER ---------------- */
+.products-image-section {
+  position: relative;
+  background: #010817;
+  height: 250px;
+  z-index: 0;
+}
+
+.products-hero-image {
+  position: absolute;
+  bottom: -400px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.products-title-overlay {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 7rem;
+  font-family: 'Walter Turncoat', cursive;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  -webkit-text-stroke: 0.25px rgba(0, 0, 0, 0.767);
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
+}
+
+.products-title-overlay:hover {
+  color: rgba(0, 0, 0, 0.781);
+  -webkit-text-stroke: 1px rgb(211, 224, 252);
+}
+
+/* ---------------- WHITE SECTION ---------------- */
+.white-section {
+  background-color: #FFECC7;
+  padding: 60px 20px;
+  color: black;
+}
+
+/* ---------------- BITES SECTION ---------------- */
+.bites-section {
+  padding: 50px 20px;
+  border-radius: 15px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.bites-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bites-header h2 {
+  font-family: 'Walter Turncoat', cursive;
+  font-size: 3rem;
+  color: black;
+}
+
+.bites-divider {
+  background-color: black;
+  height: 2px;
+  border: none;
+  margin: 20px 0;
+}
+
+.bites-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 40px;
+  margin-top: 30px;
+  transition: all 0.6s ease-in-out;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right {
+  animation: slideFromRight 0.5s ease forwards;
+}
+
+.slide-left {
+  animation: slideFromLeft 0.5s ease forwards;
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
   }
-  
-  .collections-page {
-    background-color: #010817;
-    min-height: 100vh;
-    color: white;
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
   }
-  
-  /* ---------------- IMAGE SLIDER ---------------- */
-  .slider-container {
-    width: 100vw;
-    height: 600px;
-    overflow: hidden;
-    border-radius: 15px;
-    position: relative;
-    z-index: 1;
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
   }
-  
-  .slider-inner {
-    display: flex;
-    transition: transform 1s ease-in-out;
-    height: 100%;
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
   }
-  
-  .slide-image {
-    width: 100vw;
-    height: 100%;
-    object-fit: cover;
-    flex-shrink: 0;
-  }
-  
-  /* ---------------- SEARCH ---------------- */
-  .search-wrapper {
-    position: absolute;
-    top: 400px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-  }
-  
-  .search-bar {
-    display: flex;
-  }
-  
-  
-  .search-input {
-    background-color: black;
-    color: white;
-    border: 2px solid white;
-    padding: 12px 20px;
-    width: 300px;
-    border-radius: 25px 0 0 25px;
-    font-size: 1rem;
-    outline: none;
-    font-family: 'Single Day', cursive;
-    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.3);
-  }
-  
-  .search-button {
-    background: white;
-    border: 2px solid white;
-    border-left: none;
-    padding: 10px 14px;
-    border-radius: 0 25px 25px 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 48px;
-    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.3);
-  }
-  
-  .search-button img {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .suggestions-list {
-    margin-top: 5px;
-    background-color: #111;
-    border: 1px solid white;
-    color: white;
-    font-family: 'Single Day', cursive;
-    width: 300px;
-    max-height: 200px;
-    overflow-y: auto;
-    border-radius: 0 0 10px 10px;
-    z-index: 1000;
-    list-style: none;
-  }
-  
-  .suggestions-list li {
-    padding: 8px 12px;
-    cursor: pointer;
-    border-bottom: 1px solid #333;
-  }
-  
-  .suggestions-list li:hover {
-    background-color: #333;
-  }
-  
-  /* ---------------- SLIDER DOTS ---------------- */
-  .slider-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 10;
-  }
-  
-  .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.6);
-    border: 2px solid black;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .dot.active {
-    background-color: #000;
-  }
-  
-  /* ---------------- PRODUCT SECTION ---------------- */
-  .product-section {
-    background: #010817;
-    color: white;
-    padding: 40px 20px;
-  }
-  
-  .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .section-header h2 {
-    font-family: 'Walter Turncoat', cursive;
-    font-size: 2rem;
-    margin-left: 10px;
-  }
-  
-  .arrow-controls {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .arrow {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-  }
-  
-  .arrow.flipped {
-    transform: rotate(180deg);
-  }
-  
-  .section-divider {
-    border: none;
-    height: 2px;
-    background: white;
-    margin: 10px 0 25px;
-  }
-  
-  /* ---------------- PRODUCT SCROLL ---------------- */
-  .product-scroll {
-    display: flex;
-    overflow-x: auto;
-    gap: 80px;
-    padding: 10px 0 20px;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  
-  .product-scroll::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* ---------------- PRODUCT CARD ---------------- */
-  .product-card {
-    min-width: 350px;
-    max-width: 350px;
-    color: black;
-    background: #87AAD7;
-    border-radius: 15px;
-    border: 2px solid white;
-    padding-bottom: 10px;
-    position: relative;
-    transition: transform 0.3s ease;
-    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
-  }
-  
-  .product-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .product-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    margin: 0;
-    padding: 0;
-    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  .cart-hover {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: none;
-  }
-  
-  .product-card:hover .cart-hover {
-    display: block;
-  }
-  
-  .cart-icon {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .product-name,
-  .dropdowns,
-  .product-price {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-  
-  .product-name {
-    font-family: 'Single Day', cursive;
-    font-size: 2rem;
-    margin-top: 10px;
-  }
-  
-  .dropdowns {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin: 10px 0 30px;
-  }
-  
-  .dropdowns select {
-    font-family: 'Single Day', cursive;
-    font-size: 1rem;
-    border: 2px solid black;
-    border-radius: 8px;
-    padding: 8px 15px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-  }
-  
-  .dropdowns select:first-child {
-    background-color: #6C69BB;
-    color: black;
-  }
-  
-  .product-price {
-    font-family: 'Single Day', cursive;
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  
+}
+
+.bites-details .dropdowns {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.bites-details .product-name {
+  font-family: 'Single Day', cursive;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.bites-details .product-price {
+  font-family: 'Single Day', cursive;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.bites-image-wrapper {
+  position: relative;
+}
+
+.bites-card:hover .cart-hover {
+  display: block;
+}
+
+.bites-image-wrapper .cart-hover {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+}
+
+.bites-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.bites-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 30px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.bites-details {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bites-col-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.bites-col-left .product-name {
+  font-family: 'Single Day', cursive;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.bites-col-left .product-price {
+  font-family: 'Single Day', cursive;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.bites-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bites-col-right select {
+  font-family: 'Single Day', cursive;
+  font-size: 1rem;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 6px 14px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.bites-col-right select:first-child {
+  background-color: #7C7AB4;
+  color: black;
+}
+
+/* --- FETCH AND FUN STYLES --- */
+.fetch-section {
+  padding: 50px 20px;
+}
+
+.fetch-grid {
+  display: flex;
+  gap: 40px; 
+  transition: all 0.5s ease-in-out;
+  margin-top: 40px;
+}
+
+.fetch-card {
+  position: relative;
+  width: 33%; 
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid black; 
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.fetch-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.fetch-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 15px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.fetch-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.fetch-details .product-name {
+  font-family: 'Single Day', cursive;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.fetch-details .dropdowns {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.fetch-details .dropdowns select {
+  font-family: 'Single Day', cursive;
+  font-size: 1rem;
+  border-radius: 15px;
+  padding: 6px 12px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.fetch-details .product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.fetch-card .cart-hover {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+}
+
+.fetch-card:hover .cart-hover {
+  display: block;
+}
+
+.fetch-card .cart-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.fetch-card,
+.bites-card,
+.product-card {
+  transition: transform 0.3s ease;
+}
+
+.fetch-card:hover,
+.bites-card:hover,
+.product-card:hover {
+  transform: scale(1.03);
+}
+
+/* --- FURRY HOMES STYLES --- */
+/* --- FURRY HOMES STYLES --- */
+.furry-section {
+  padding: 50px 20px;
+  margin-top: 40px;
+}
+
+.furry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 30px;
+  transition: all 0.6s ease-in-out;
+}
+
+.furry-card {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.furry-card:hover {
+  transform: scale(1.05);
+}
+
+.furry-image-wrapper {
+  position: relative;
+}
+
+.furry-image {
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-right: 20px;
+  border: 2px solid black;
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.furry-card .cart-hover {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  display: none;
+  z-index: 2;
+}
+
+.furry-card:hover .cart-hover {
+  display: block;
+}
+
+.furry-card .cart-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.furry-details {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.furry-col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.furry-dropdowns {
+  display: flex;
+  gap: 10px;
+}
+
+.furry-dropdowns select {
+  font-family: 'Single Day', cursive;
+  font-size: 1rem;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 8px 15px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.furry-dropdowns select:first-child {
+  background-color: #7C7AB4;
+  color: black;
+}
+
+.product-price {
+  font-family: 'Single Day', cursive;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* --- COLLARS AND CHARMS STYLES --- */
+.collar-section {
+  padding: 50px 20px;
+  margin-top: 40px;
+}
+
+.collar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.collar-grid::before,
+.collar-grid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: black;
+}
+
+.collar-grid::before {
+  left: 33.33%;
+  transform: translateX(-50%);
+}
+
+.collar-grid::after {
+  left: 66.66%;
+  transform: translateX(-50%);
+}
+
+.collar-card {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.collar-card:hover {
+  transform: scale(1.05);
+}
+
+.collar-image-wrapper {
+  position: relative;
+}
+
+.collar-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-right: 20px;
+  border: 2px solid black;
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.collar-card .cart-hover {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  display: none;
+  z-index: 2;
+}
+
+.collar-card:hover .cart-hover {
+  display: block;
+}
+
+.collar-card .cart-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.collar-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.collar-col-left .product-name {
+  font-family: 'Single Day', cursive;
+  font-size: 2rem;
+}
+
+.collar-col-left .product-price {
+  font-family: 'Single Day', cursive;
+  font-size: 1.3rem;
+}
+
+.collar-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.collar-col-right select {
+  font-family: 'Single Day', cursive;
+  font-size: 1rem;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 8px 15px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  width: 110px; 
+}
+
+.collar-col-right select:first-child {
+  background-color: #7C7AB4;
+  color: black;
+}
