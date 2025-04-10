@@ -4,10 +4,17 @@ import { useAuth } from "../App";
 import { useCart } from "../CartContext";
 import "./Collections.css";
 
-import img1 from "../assets/0.png";
-import img2 from "../assets/1.png";
-import img3 from "../assets/2.png";
-import img4 from "../assets/4.png";
+import img0 from "../assets/0.png";
+import img1 from "../assets/1.jpeg";
+import img2 from "../assets/2.png";
+import img3 from "../assets/3.png";
+import img4 from "../assets/4.jpeg";
+import img5 from "../assets/5.png";
+import img6 from "../assets/6.jpeg";
+import img7 from "../assets/7.jpeg";
+import img8 from "../assets/8.png";
+import img9 from "../assets/9.jpeg";
+
 import searchIcon from "../assets/search.png";
 import crossIcon from "../assets/cross.png";
 import expArrow from "../assets/exparrow.png";
@@ -17,40 +24,40 @@ import cartIcon from "../assets/cart.png";
 const sliderImages = [img1, img2, img3, img4];
 
 const products = [
-  { name: "Albino Python", price: 25000, img: img1 },
-  { name: "Macaw Parrot", price: 18000, img: img2 },
-  { name: "Axolotl", price: 12000, img: img3 },
-  { name: "Sugar Glider", price: 15000, img: img4 },
-  { name: "Chameleon", price: 9000, img: img2 },
-  { name: "Fennec Fox", price: 22000, img: img1 },
-  { name: "Capybara", price: 27000, img: img3 },
-  { name: "Blue Poison Dart Frog", price: 8000, img: img4 },
-  { name: "Koi Fish", price: 5000, img: img2 },
-  { name: "Serval Cat", price: 32000, img: img1 },
+  { name: "Axolotl", price: 15000, img: img0 },
+  { name: "Albino Ball Python", price: 35000, img: img1 },
+  { name: "Albino Ferret", price: 15000, img: img2 },
+  { name: "Asian Small-Clawed Otter", price: 15000, img: img3 },
+  { name: "Capybara", price: 930000, img: img4 },
+  { name: "Hyacinth Macaw", price: 2250000, img: img5 },
+  { name: "Indian Star Tortoise", price: 50000, img: img6 },
+  { name: "Panther Chameleon", price: 18000, img: img7 },
+  { name: "Platypus ", price:  13000000, img: img8 },
+  { name: "Victoria Crowned Pigeon", price: 500000, img: img9 },
 ];
 
 const bitesAndBowls = [
-  { name: "Chicken Bites", price: 450, img: img1 },
-  { name: "Salmon Snacks", price: 500, img: img1 },
-  { name: "Tuna Treats", price: 480, img: img1 },
-  { name: "Chewy Bones", price: 400, img: img1 },
-  { name: "Veggie Mix Bowl", price: 600, img: img1 },
-  { name: "Grain-Free Kibble", price: 750, img: img1 },
-  { name: "Beef Nuggets", price: 520, img: img1 },
-  { name: "Soft Lamb Bites", price: 490, img: img1 },
-  { name: "Ocean Delight", price: 510, img: img1 },
-  { name: "Turkey Crunch", price: 550, img: img1 },
-  { name: "Fruit Mix Bowl", price: 495, img: img1 },
-  { name: "Mini Bacon Rolls", price: 530, img: img1 },
+  { name: "Axie Appetite Dish", price: 1200, img: img1 },
+  { name: "Snakebite Snack Tray", price: 1500, img: img1 },
+  { name: "Ferret Feast Bowl", price: 950, img: img1 },
+  { name: "Otter Munch Mat", price: 1600, img: img1 },
+  { name: "Capy Crunch Platter", price: 2200, img: img1 },
+  { name: "Macaw Munch Feeder", price: 3500, img: img1 },
+  { name: "Star Tortoise Treat Dish", price: 1400, img: img1 },
+  { name: "Chameleon Sipper Leaf", price: 1800, img: img1 },
+  { name: "Platypus Paddle Plate", price: 2800, img: img1 },
+  { name: "Royal Grain Feeder", price: 3000, img: img1 },
+  { name: "Gilly Gulp Tube", price: 1100, img: img1 },
+  { name: "Wildberry Mix Pack", price: 2000, img: img1 },
 ];
 
 const fetchItems = [
-  { name: "Rubber Bone", price: 320, img: img2 },
-  { name: "Squeaky Ball", price: 250, img: img3 },
-  { name: "Rope Tug", price: 400, img: img1 },
-  { name: "Frisbee Flyer", price: 550, img: img4 },
-  { name: "Chew Stick", price: 300, img: img2 },
-  { name: "Plush Duck", price: 450, img: img3 },
+  { name: "Slinky Slither Tunnel", price: 2500, img: img2 },
+  { name: "Frosty Ferret Frolic", price: 1800, img: img3 },
+  { name: "Otter Dive Rings", price: 3200, img: img1 },
+  { name: "Capy Roller Wheel", price: 4000, img: img4 },
+  { name: "Chroma Chase Ladder", price: 2700, img: img2 },
+  { name: "Feathered Friend Flyer", price: 2500, img: img3 },
   { name: "Treat Puzzle", price: 600, img: img1 },
   { name: "Interactive Bone", price: 500, img: img4 }
 ];
