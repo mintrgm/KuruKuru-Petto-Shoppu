@@ -29,7 +29,7 @@ body {
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-family: 'Walter Turncoat', cursive;
   transition: all 0.3s ease-in-out;
   padding: 5px 10px;
@@ -71,6 +71,19 @@ body {
   color: #BBA569;
 }
 
+.nav-active {
+  color: white;
+  -webkit-text-stroke: 1.5px black;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  opacity: 1;
+}
+
+.nav-inactive {
+  opacity: 0.5;
+  text-shadow: none;
+  -webkit-text-stroke: 0px;
+}
+
 .nav-links a.collections-inactive:hover {
   opacity: 1; 
 }
@@ -106,11 +119,12 @@ body {
   border: 2px solid black;
   border-radius: 25px;
   padding: 8px 30px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out transform 0.2s ease-in-out;
   cursor: pointer;
 }
 
 .logout:hover {
   background-color: white;
   color: #69B6BB;
+  transform: scale(1.05); 
 }
