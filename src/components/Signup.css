@@ -31,6 +31,15 @@
     text-align: center;
     margin-bottom: 10px;
     margin-top: -20px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    -webkit-text-stroke: 0.25px rgba(0, 0, 0, 0.521); 
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .signup-title:hover {
+    color: rgba(238, 237, 237, 0.781);
+    -webkit-text-stroke: 1px #BBA569;
+    text-shadow: none;
   }
   
   .signup-label {
