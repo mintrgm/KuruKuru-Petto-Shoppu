@@ -66,10 +66,12 @@ const Cart = ({ visible, onClose }) => {
             ))}
           </tbody>
         </table>
-        <p className="total-price">
-          TOTAL PRICE: Rs. {cartItems.reduce((total, item) => total + item.price, 0)}/-
-        </p>
-        <button className="checkout-btn" onClick={handleCheckout}>Check out</button>
+        <div className="cart-footer">
+          <p className="total-price">
+            TOTAL PRICE: Rs. {cartItems.reduce((total, item) => total + item.price, 0)}/-
+          </p>
+          <button className="checkout-btn" onClick={handleCheckout}>Check out</button>
+        </div>
       </div>
     </div>
   );
