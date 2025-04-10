@@ -29,7 +29,7 @@ const Profile = () => {
             <h2>PERSONAL INFORMATION</h2>
             <img src={editIcon} alt="Edit" className="edit-icon" />
           </div>
-          <hr className="section-divider" />
+          <hr className="sections-divider" />
           <div className="profile-details">
             <p><strong>Name:</strong> {user.name}</p>
             <p><strong>Phone:</strong> 9843369050</p>
@@ -44,7 +44,7 @@ const Profile = () => {
           SHIPPING ADDRESS
           <img src={editIcon} alt="Edit" className="edit-icon" />
         </h2>
-        <hr className="section-divider" />
+        <hr className="sections-divider" />
         <div className="address-details">
         <ul className="address-list">
           <li>📍 Sorhakhutte, Kathmandu</li>
@@ -61,7 +61,7 @@ const Profile = () => {
           ORDER HISTORY
           <img src={editIcon} alt="Edit" className="edit-icon" />
         </h2>
-        <hr className="section-divider" />
+        <hr className="sections-divider" />
         <div className="order-group">
           <div className="order-date">Fri - Feb 21, 2025</div>
           <div className="order-items">
