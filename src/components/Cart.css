@@ -17,8 +17,9 @@
     padding: 30px;
     width: 750px;
     position: relative;
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
     font-family: 'Single Day', cursive;
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.3);
   }
   
   .close-btn {
@@ -31,11 +32,14 @@
   }
   
   .cart-title {
-    font-size: 2.2rem;
+    font-size: 2.75rem;
     text-align: center;
     margin-bottom: 20px;
     font-family: 'Walter Turncoat', cursive;
-    color: #6e5522;
+    color: #738BBF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    -webkit-text-stroke: 0.25px rgba(0, 0, 0, 0.521); 
   }
   
   .cart-table {
@@ -44,28 +48,69 @@
     margin-bottom: 20px;
   }
   
-  .cart-table th,
+  .cart-table select {
+    font-family: 'Single Day', cursive;
+    padding: 6px 12px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid #444;
+    background-color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .cart-table select:hover {
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cart-table th {
+    padding: 12px;
+    border-bottom: 2px solid #333;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 1.75rem;
+  }
+
   .cart-table td {
     padding: 12px;
     border-bottom: 2px solid #333;
     text-align: center;
+    font-family: 'Single Day', cursive;
+    font-size: 1.5rem;
   }
   
-  .cart-table th {
-    font-weight: bold;
+  .delete-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
   }
   
   .delete-icon {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    transition: transform 0.2s ease;
+  }
+  
+  .delete-icon:hover {
+    transform: scale(1.25);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+  }
+  
+  .cart-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 20px;
   }
   
   .total-price {
     font-size: 1.3rem;
     margin-bottom: 20px;
     font-weight: bold;
-  }
+  }  
   
   .checkout-btn {
     font-family: 'Single Day', cursive;
@@ -80,5 +125,6 @@
   .checkout-btn:hover {
     background: white;
     color: #bb8669;
+    transform: scale(1.05);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
   }
-  
