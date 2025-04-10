@@ -60,7 +60,7 @@ body {
   }
   
   /* Horizontal Line */
-  .section-divider {
+  .sections-divider {
     border: none;
     height: 2px;
     background: black;
