@@ -6,7 +6,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   border: 2px solid black;
   position: fixed;
-  width: 97.5%;
+  width: 100%;
   padding: 15px 20px;
   display: flex;
   align-items: center;
