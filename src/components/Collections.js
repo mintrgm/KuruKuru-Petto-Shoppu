@@ -59,13 +59,24 @@ import img42 from "../assets/42.jpeg";
 import img43 from "../assets/43.jpeg";
 import img44 from "../assets/44.png";
 
+/* Featured Pets*/
+import img45 from "../assets/01.png";
+import img46 from "../assets/011.png";
+import img47 from "../assets/02.png";
+import img48 from "../assets/022.png";
+import img49 from "../assets/03.png";
+import img50 from "../assets/033.png";
+import img51 from "../assets/04.png";
+import img52 from "../assets/044.png";
+
+
 import searchIcon from "../assets/search.png";
 import crossIcon from "../assets/cross.png";
 import expArrow from "../assets/exparrow.png";
 import expArrowB from "../assets/exparrow0.png";
 import cartIcon from "../assets/cart.png";
 
-const sliderImages = [img1, img2, img3, img4];
+const sliderImages = [img46, img48, img50, img52];
 
 const products = [
   { name: "Axolotl", price: 15000, img: img0 },
@@ -247,17 +258,23 @@ const Collections = () => {
   return (
     <div className="collections-page">
       <div className="slider-container">
-        <div
-          className="slider-inner"
-          style={{
-            transform: `translateX(-${currentIndex * 100}vw)`,
-            width: `${sliderImages.length * 100}vw`,
-          }}
-        >
-          {sliderImages.map((src, i) => (
-            <img key={i} src={src} alt={`slide-${i}`} className="slide-image" />
-          ))}
-        </div>
+      <div className="slider-inner"
+        style={{
+          transform: `translateX(-${currentIndex * 100}vw)`,
+          width: `${sliderImages.length * 100}vw`,
+        }}
+      >
+        {sliderImages.map((src, i) => (
+          <div className="slide-wrapper" key={i}>
+            <img src={src} alt={`slide-${i}`} className="slide-image" />
+            <img
+              src={[img45, img47, img49, img51][i]}
+              alt={`overlay-${i}`}
+              className="slide-overlay"
+            />
+          </div>
+        ))}
+      </div>
 
         {/* Search Bar */}
         <div className="search-wrapper">
