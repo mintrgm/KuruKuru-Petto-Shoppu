@@ -4,6 +4,7 @@ import { useAuth } from "../App";
 import { useCart } from "../CartContext";
 import "./Collections.css";
 
+/* Exotic Pets */
 import img0 from "../assets/0.png";
 import img1 from "../assets/1.jpeg";
 import img2 from "../assets/2.png";
@@ -14,6 +15,49 @@ import img6 from "../assets/6.jpeg";
 import img7 from "../assets/7.jpeg";
 import img8 from "../assets/8.png";
 import img9 from "../assets/9.jpeg";
+
+/* Bites and Bowls */
+import img10 from "../assets/10.jpeg";
+import img11 from "../assets/11.jpeg";
+import img12 from "../assets/12.jpeg";
+import img13 from "../assets/13.jpeg";
+import img14 from "../assets/14.jpeg";
+import img15 from "../assets/15.jpeg";
+import img16 from "../assets/16.jpeg";
+import img17 from "../assets/17.jpeg";
+import img18 from "../assets/18.jpeg";
+import img19 from "../assets/19.jpeg";
+import img20 from "../assets/20.jpeg";
+import img21 from "../assets/21.jpeg";
+
+/* Fetch and Fun */
+import img22 from "../assets/22.jpeg";
+import img23 from "../assets/23.jpeg";
+import img24 from "../assets/24.jpeg";
+import img25 from "../assets/25.jpeg";
+import img26 from "../assets/26.jpeg";
+import img27 from "../assets/27.jpeg";
+
+/* Furry Homes */
+import img28 from "../assets/28.jpeg";
+import img29 from "../assets/29.jpeg";
+import img30 from "../assets/30.jpeg";
+import img31 from "../assets/31.jpeg";
+import img32 from "../assets/32.jpeg";
+import img33 from "../assets/33.jpeg";
+import img34 from "../assets/34.jpeg";
+import img35 from "../assets/35.jpeg";
+
+/* Collars and Charms */
+import img36 from "../assets/36.jpeg";
+import img37 from "../assets/37.jpeg";
+import img38 from "../assets/38.jpeg";
+import img39 from "../assets/39.jpeg";
+import img40 from "../assets/40.jpeg";
+import img41 from "../assets/41.jpeg";
+import img42 from "../assets/42.jpeg";
+import img43 from "../assets/43.jpeg";
+import img44 from "../assets/44.png";
 
 import searchIcon from "../assets/search.png";
 import crossIcon from "../assets/cross.png";
@@ -32,57 +76,55 @@ const products = [
   { name: "Hyacinth Macaw", price: 2250000, img: img5 },
   { name: "Indian Star Tortoise", price: 50000, img: img6 },
   { name: "Panther Chameleon", price: 18000, img: img7 },
-  { name: "Platypus ", price:  13000000, img: img8 },
+  { name: "Platypus ", price:  130000000, img: img8 },
   { name: "Victoria Crowned Pigeon", price: 500000, img: img9 },
 ];
 
 const bitesAndBowls = [
-  { name: "Axie Appetite Dish", price: 1200, img: img1 },
-  { name: "Snakebite Snack Tray", price: 1500, img: img1 },
-  { name: "Ferret Feast Bowl", price: 950, img: img1 },
-  { name: "Otter Munch Mat", price: 1600, img: img1 },
-  { name: "Capy Crunch Platter", price: 2200, img: img1 },
-  { name: "Macaw Munch Feeder", price: 3500, img: img1 },
-  { name: "Star Tortoise Treat Dish", price: 1400, img: img1 },
-  { name: "Chameleon Sipper Leaf", price: 1800, img: img1 },
-  { name: "Platypus Paddle Plate", price: 2800, img: img1 },
-  { name: "Royal Grain Feeder", price: 3000, img: img1 },
-  { name: "Gilly Gulp Tube", price: 1100, img: img1 },
-  { name: "Wildberry Mix Pack", price: 2000, img: img1 },
+  { name: "Wildberry Mix Plates Pack", price: 5000, img: img10 },
+  { name: "KoiKoi Snack Tray", price: 1500, img: img11 },
+  { name: "Ferret Feast Diet", price: 950, img: img12 },
+  { name: "Otter Munch Plate", price: 1600, img: img13 },
+  { name: "Capy Crunch Platter", price: 2200, img: img14 },
+  { name: "Macaw Munch Grains", price: 3500, img: img15 },
+  { name: "Star Tortoise Treat Dish", price: 1400, img: img16 },
+  { name: "Chameleon Water Dish", price: 1800, img: img17 },
+  { name: "Platypus Paddle Cup", price: 2800, img: img18 },
+  { name: "Royal Grain Feeder", price: 3000, img: img19 },
+  { name: "Tortoise Water Plate", price: 1100, img: img20 },
+  { name: "Axie Appetite Dish", price: 1200, img: img21 },
 ];
 
 const fetchItems = [
-  { name: "Slinky Slither Tunnel", price: 2500, img: img2 },
-  { name: "Frosty Ferret Frolic", price: 1800, img: img3 },
-  { name: "Otter Dive Rings", price: 3200, img: img1 },
-  { name: "Capy Roller Wheel", price: 4000, img: img4 },
-  { name: "Chroma Chase Ladder", price: 2700, img: img2 },
-  { name: "Feathered Friend Flyer", price: 2500, img: img3 },
-  { name: "Treat Puzzle", price: 600, img: img1 },
-  { name: "Interactive Bone", price: 500, img: img4 }
+  { name: "Slinky Slither Tunnel", price: 2500, img: img22 },
+  { name: "Plushies Friend Pack", price: 1800, img: img23 },
+  { name: "Interactive Food Dumbell", price: 2500, img: img24 },
+  { name: "Capy Roller Wheel", price: 4000, img: img25 },
+  { name: "Chroma Chase Ladder", price: 2700, img: img26 },
+  { name: "Otter Dive Rings", price: 3200, img: img27 },
 ];
 
 const furryHomes = [
-  { name: "Plush Cat Bed", price: 1200, img: img4 },
-  { name: "Wooden Dog House", price: 2500, img: img4 },
-  { name: "Bunny Hutch", price: 1800, img: img3 },
-  { name: "Hamster Habitat", price: 1400, img: img1 },
-  { name: "Pet Tent", price: 1000, img: img4 },
-  { name: "Cat Tree Condo", price: 2200, img: img2 },
-  { name: "Foldable Crate", price: 1600, img: img2 },
-  { name: "Luxury Dog Bed", price: 2000, img: img4 },
+  { name: "Aquatic Abode", price: 3800, img: img28 },
+  { name: "Constellation Cove", price: 75000, img: img29 },
+  { name: "Blizzard Burrow Bed", price: 200, img: img30 },
+  { name: "Riverbank Retreat", price: 5500, img: img31 },
+  { name: "Grassland Getaway", price: 6500, img: img32 },
+  { name: "Prism Habitat", price: 4200, img: img33 },
+  { name: "Coil Comfort Cave", price: 3300, img: img34 },
+  { name: "Palatial Perch", price: 6000, img: img35 },
 ];
 
 const collarItems = [
-  { name: "Leather Collar", price: 400, img: img1 },
-  { name: "Charm Bell", price: 150, img: img2 },
-  { name: "Studded Collar", price: 600, img: img3 },
-  { name: "Bow Tie Charm", price: 200, img: img4 },
-  { name: "Reflective Band", price: 350, img: img2 },
-  { name: "Floral Collar", price: 450, img: img3 },
-  { name: "Name Tag Charm", price: 250, img: img1 },
-  { name: "Sparkle Band", price: 500, img: img4 },
-  { name: "Gold Buckle", price: 550, img: img2 }
+  { name: "Neotenic Necklace", price: 1500, img: img36 },
+  { name: "Giraffe hat crochet", price: 2000, img: img37 },
+  { name: "Figurine Pom Pom", price: 1200, img: img38 },
+  { name: "Aqua Paws Pendant", price: 2300, img: img39 },
+  { name: "Flower Crown crochet", price: 2000, img: img40 },
+  { name: "Crochet Hats Pack", price: 3000, img: img41 },
+  { name: "Capybara Burger", price: 1800, img: img42 },
+  { name: "Donut Scale Tag", price: 2500, img: img43 },
+  { name: "Outdoor Harness", price: 2700, img: img44 }
 ];
 
 const Collections = () => {
@@ -287,22 +329,18 @@ const Collections = () => {
         <hr className="section-divider" />
 
         <div
-            className="product-scroll"
-            ref={scrollRef}
-            onMouseEnter={handleUserInteraction}
-            onMouseLeave={() => {
-              setAutoScrollPaused(false); 
-            }}
-          >
-            {filteredProducts.map((p, i) => (
-              <div
-                key={i}
-                className="product-card"
-                onMouseEnter={handleUserInteraction}
-                onMouseLeave={() => {
-                  setAutoScrollPaused(false); 
-                }}
-              >        
+          className="product-scroll"
+          ref={scrollRef}
+          onMouseEnter={handleUserInteraction}
+          onMouseLeave={() => setAutoScrollPaused(false)}
+        >
+          {[...filteredProducts, ...filteredProducts].map((p, i) => (
+            <div
+              key={i}
+              className="product-card"
+              onMouseEnter={handleUserInteraction}
+              onMouseLeave={() => setAutoScrollPaused(false)}
+            >
               <img src={p.img} alt={p.name} className="product-image" />
               <div
                 className="cart-hover"
