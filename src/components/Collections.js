@@ -96,6 +96,9 @@ const Collections = () => {
   const [bitesPage, setBitesPage] = useState(0);
   const [fetchPage, setFetchPage] = useState(0);
   const [furryPage, setFurryPage] = useState(0);
+  const [autoScrollPaused, setAutoScrollPaused] = useState(false);
+  const [userInteracted, setUserInteracted] = useState(false);
+  const autoScrollRef = useRef(null);
 
   const navigate = useNavigate();
   const { user } = useAuth();
@@ -109,26 +112,75 @@ const Collections = () => {
     }, 4000);
     return () => clearInterval(interval);
   }, []);
-
+  
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
+  
+    let animationFrameId;
+    let delayTimeout;
+  
+    const scrollStep = () => {
+      if (!el || autoScrollPaused || userInteracted) return;
+  
+      if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 1) {
+        el.scrollLeft = 0;
+      } else {
+        el.scrollLeft += 1;
+      }
+  
+      animationFrameId = requestAnimationFrame(scrollStep);
+    };
+  
+    delayTimeout = setTimeout(() => {
+      animationFrameId = requestAnimationFrame(scrollStep);
+      autoScrollRef.current = animationFrameId;
+    }, 3000); 
+  
+    return () => {
+      clearTimeout(delayTimeout);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [autoScrollPaused, userInteracted]);  
+  
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+  
     const handleScroll = () => {
       setCanScrollLeft(el.scrollLeft > 0);
       setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
     };
+  
     el.addEventListener("scroll", handleScroll);
     handleScroll();
+  
     return () => el.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollLeft = () => {
-    if (scrollRef.current) scrollRef.current.scrollBy({ left: -350, behavior: "smooth" });
+  const handleUserInteraction = () => {
+    setAutoScrollPaused(true);
+    setUserInteracted(true);
+
+    setTimeout(() => {
+      setUserInteracted(false);
+      setAutoScrollPaused(false); 
+    }, 1000);
   };
 
-  const scrollRight = () => {
-    if (scrollRef.current) scrollRef.current.scrollBy({ left: 350, behavior: "smooth" });
+  const scrollLeft = () => {
+    handleUserInteraction();
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -350, behavior: "smooth" });
+    }
   };
+  
+  const scrollRight = () => {
+    handleUserInteraction();
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 350, behavior: "smooth" });
+    }
+  };  
 
   const handleSuggestionClick = (name) => {
     setQuery(name);
@@ -234,9 +286,23 @@ const Collections = () => {
 
         <hr className="section-divider" />
 
-        <div className="product-scroll" ref={scrollRef}>
-          {filteredProducts.map((p, i) => (
-            <div key={i} className="product-card">
+        <div
+            className="product-scroll"
+            ref={scrollRef}
+            onMouseEnter={handleUserInteraction}
+            onMouseLeave={() => {
+              setAutoScrollPaused(false); 
+            }}
+          >
+            {filteredProducts.map((p, i) => (
+              <div
+                key={i}
+                className="product-card"
+                onMouseEnter={handleUserInteraction}
+                onMouseLeave={() => {
+                  setAutoScrollPaused(false); 
+                }}
+              >        
               <img src={p.img} alt={p.name} className="product-image" />
               <div
                 className="cart-hover"
