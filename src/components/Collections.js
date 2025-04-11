@@ -160,6 +160,44 @@ const Collections = () => {
   const scrollRef = useRef(null);
 
   useEffect(() => {
+    const animateElements = () => {
+      document.querySelector(".slider-container")?.classList.add("slide-down");
+      document.querySelectorAll(".slide-overlay").forEach(el => el.classList.add("slide-from-right"));
+      document.querySelector(".search-wrapper")?.classList.add("zoom-in");
+      document.querySelector(".slider-dots")?.classList.add("zoom-in");
+  
+      document.querySelectorAll(".section-header").forEach(el => el.classList.add("slide-from-left"));
+      document.querySelectorAll(".arrow-controls").forEach(el => el.classList.add("slide-from-right"));
+      document.querySelectorAll(".section-divider").forEach(el => el.classList.add("expand-center"));
+  
+      const productCards = document.querySelectorAll(".product-card");
+      productCards.forEach((card, i) => {
+        setTimeout(() => card.classList.add("pop-in"), i * 100);
+      });
+    };
+  
+    setTimeout(animateElements, 100); 
+  }, []);  
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+            observer.unobserve(entry.target); // only once
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+  
+    document.querySelectorAll(".animate-on-scroll").forEach(el => {
+      observer.observe(el);
+    });
+  }, []);  
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % sliderImages.length);
     }, 4000);
@@ -267,11 +305,14 @@ const Collections = () => {
         {sliderImages.map((src, i) => (
           <div className="slide-wrapper" key={i}>
             <img src={src} alt={`slide-${i}`} className="slide-image" />
-            <img
-              src={[img45, img47, img49, img51][i]}
-              alt={`overlay-${i}`}
-              className="slide-overlay"
-            />
+            
+            <div className="overlay-wrapper">
+              <img
+                src={[img45, img47, img49, img51][i]}
+                alt={`overlay-${i}`}
+                className="overlay-image"
+              />
+            </div>
           </div>
         ))}
       </div>
@@ -330,8 +371,8 @@ const Collections = () => {
       </div>
 
       {/* Exotic Friends Section */}
-      <div className="product-section">
-        <div className="section-header">
+      <div className="product-section animate-on-scroll">
+        <div className="section-header animate-on-scroll">
           <h2>Exotic Friends</h2>
           <div className="arrow-controls">
             {canScrollLeft && (
@@ -343,7 +384,7 @@ const Collections = () => {
           </div>
         </div>
 
-        <hr className="section-divider" />
+        <hr className="section-divider animate-on-scroll" />
 
         <div
           className="product-scroll"
@@ -354,7 +395,7 @@ const Collections = () => {
           {[...filteredProducts, ...filteredProducts].map((p, i) => (
             <div
               key={i}
-              className="product-card"
+              className="product-card animate-on-scroll"
               onMouseEnter={handleUserInteraction}
               onMouseLeave={() => setAutoScrollPaused(false)}
             >
@@ -401,22 +442,21 @@ const Collections = () => {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="products-image-section">
+        <div className="products-image-section">
         <img
           src={require("../assets/blob.png")}
           alt="Products"
           className="products-hero-image"
         />
-        <h2 className="products-title-overlay">PRODUCTS</h2>
+        <h2 className="products-title-overlay animate-on-scroll">PRODUCTS</h2>
+        </div>
       </div>
 
       <div className="white-section">
 
         {/* Bites & Bowls Section */}
-        <div className="bites-section">
-          <div className="bites-header">
+        <div className="bites-section animate-on-scroll">
+          <div className="bites-header animate-on-scroll">
             <h2>Bites and Bowls</h2>
             <div className="arrow-controls">
               {bitesPage === 0 && (
@@ -438,11 +478,11 @@ const Collections = () => {
             </div>
           </div>
 
-          <hr className="sections-divider" />
+          <hr className="sections-divider animate-on-scroll" />
 
           <div className={`bites-grid slide-${bitesPage === 1 ? 'right' : 'left'}`}>
             {bitesAndBowls.slice(bitesPage * 6, bitesPage * 6 + 6).map((item, i) => (
-              <div className="bites-card" key={i}>
+              <div className="bites-card animate-on-scroll" key={i}>
                 <div className="bites-image-wrapper">
                   <img src={item.img} alt={item.name} className="bites-image" />
                   <div
@@ -486,8 +526,8 @@ const Collections = () => {
         </div>
 
         {/* Fetch & Fun Section */}
-      <div className="fetch-section">
-        <div className="bites-header">
+      <div className="fetch-section animate-on-scroll">
+        <div className="bites-header animate-on-scroll">
           <h2>Fetch and Fun</h2>
           <div className="arrow-controls">
             {fetchPage === 0 && (
@@ -509,11 +549,11 @@ const Collections = () => {
           </div>
         </div>
 
-        <hr className="sections-divider" />
+        <hr className="sections-divider animate-on-scroll" />
 
-        <div className="fetch-grid">
+        <div className={`fetch-grid slide-${fetchPage === 1 ? 'right' : 'left'}`}>
           {fetchItems.slice(fetchPage * 3, fetchPage * 3 + 3).map((item, i) => (
-            <div className="fetch-card" key={i}>
+            <div className="fetch-card animate-on-scroll" key={i}>
               <img src={item.img} alt={item.name} className="fetch-image" />
               
               <div className="fetch-overlay">
@@ -563,8 +603,8 @@ const Collections = () => {
       </div>
 
       {/* Furry Homes Section */}
-      <div className="furry-section">
-        <div className="bites-header">
+      <div className="furry-section animate-on-scroll">
+        <div className="bites-header animate-on-scroll">
           <h2>Furry Homes</h2>
           <div className="arrow-controls">
             {furryPage === 0 && (
@@ -586,11 +626,11 @@ const Collections = () => {
           </div>
         </div>
 
-        <hr className="sections-divider" />
+        <hr className="sections-divider animate-on-scroll" />
 
-        <div className="furry-grid">
+        <div className={`furry-grid slide-${furryPage === 1 ? 'right' : 'left'}`}>
           {furryHomes.slice(furryPage * 4, furryPage * 4 + 4).map((item, i) => (
-            <div className="furry-card" key={i}>
+            <div className="furry-card animate-on-scroll" key={i}>
               <div className="furry-image-wrapper">
                 <img src={item.img} alt={item.name} className="furry-image" />
                 <div
@@ -641,16 +681,16 @@ const Collections = () => {
       </div>
 
       {/* Collars and Charms Section */}
-      <div className="collar-section">
-        <div className="bites-header">
+      <div className="collar-section animate-on-scroll">
+        <div className="bites-header animate-on-scroll">
           <h2>Collars and Charms</h2>
         </div>
 
-        <hr className="sections-divider" />
+        <hr className="sections-divider animate-on-scroll" />
 
         <div className="collar-grid">
           {collarItems.map((item, i) => (
-            <div className="collar-card" key={i}>
+            <div className="collar-card animate-on-scroll" key={i}>
               <div className="collar-image-wrapper">
                 <img src={item.img} alt={item.name} className="collar-image" />
                 <div
