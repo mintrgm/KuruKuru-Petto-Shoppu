@@ -1,5 +1,11 @@
-body {
-  background-color: #010817;
+* {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
 }
 
 .collections-page {
@@ -46,28 +52,25 @@ body {
   height: 100%;
 }
 
-.overlay-image {
+.overlay-wrapper {
   position: absolute;
-  right: 2%;
-  bottom: 5%;
-  width: 500px;
-  height: 500px;
+  bottom: -30px;
+  right: -40px;
   z-index: 2;
-  animation: floatOverlay 3s ease-in-out infinite;
   pointer-events: none;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); 
+  animation: floatOverlay 4s ease-in-out infinite;
 }
 
-.overlay-image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+.overlay-image {
+  width: 600px;
+  height: auto;
+  transition: transform 0.4s ease;
 }
 
 @keyframes floatOverlay {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+  0%   { transform: translateY(0) scale(1); }
+  50%  { transform: translateY(-20px) scale(1); }
+  100% { transform: translateY(0) scale(1); }
 }
 
 /* ---------------- SEARCH ---------------- */
@@ -75,7 +78,7 @@ body {
 .search-wrapper {
   position: absolute;
   top: 400px;
-  left: 50%;
+  left: 42.5%;
   transform: translateX(-50%);
   z-index: 1000;
   display: flex;
@@ -172,7 +175,7 @@ body {
 .product-section {
   background: #010817;
   color: white;
-  padding: 40px 20px;
+  padding: 40px 0px;
 }
 
 .section-header {
@@ -242,7 +245,7 @@ body {
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.03) translateY(-5px);
 }
 
 .product-image {
@@ -254,6 +257,11 @@ body {
   margin: 0;
   padding: 0;
   box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .cart-hover {
@@ -335,7 +343,7 @@ body {
 .products-title-overlay {
   position: absolute;
   top: 65%;
-  left: 50%;
+  left: 35%;
   transform: translate(-50%, -50%);
   font-size: 7rem;
   font-family: 'Walter Turncoat', cursive;
@@ -347,8 +355,8 @@ body {
 }
 
 .products-title-overlay:hover {
-  color: rgba(0, 0, 0, 0.781);
-  -webkit-text-stroke: 1px rgb(211, 224, 252);
+  color: rgba(211, 163, 132, 0.781);
+  -webkit-text-stroke: 1px rgb(88, 52, 31);
 }
 
 /* ---------------- WHITE SECTION ---------------- */
@@ -449,6 +457,10 @@ body {
   position: relative;
 }
 
+.bites-card:hover {
+  transform: scale(1.03) translateY(-5px);
+}
+
 .bites-card:hover .cart-hover {
   display: block;
 }
@@ -475,6 +487,11 @@ body {
   border: 2px solid black;
   margin-right: 30px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.bites-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .bites-details {
@@ -552,6 +569,11 @@ body {
   border-radius: 15px;
 }
 
+.fetch-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
 .fetch-overlay {
   position: absolute;
   bottom: 0;
@@ -603,6 +625,10 @@ body {
   font-weight: bold;
 }
 
+.fetch-card:hover {
+  transform: scale(1.03) translateY(-5px);
+}
+
 .fetch-card .cart-hover {
   position: absolute;
   top: 10px;
@@ -620,19 +646,6 @@ body {
   cursor: pointer;
 }
 
-.fetch-card,
-.bites-card,
-.product-card {
-  transition: transform 0.3s ease;
-}
-
-.fetch-card:hover,
-.bites-card:hover,
-.product-card:hover {
-  transform: scale(1.03);
-}
-
-/* --- FURRY HOMES STYLES --- */
 /* --- FURRY HOMES STYLES --- */
 .furry-section {
   padding: 50px 20px;
@@ -656,7 +669,7 @@ body {
 }
 
 .furry-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.03) translateY(-5px);
 }
 
 .furry-image-wrapper {
@@ -671,6 +684,11 @@ body {
   margin-right: 20px;
   border: 2px solid black;
   box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.furry-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .furry-card .cart-hover {
@@ -767,7 +785,7 @@ body {
 }
 
 .collar-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.03) translateY(-5px);
 }
 
 .collar-image-wrapper {
@@ -782,6 +800,11 @@ body {
   margin-right: 20px;
   border: 2px solid black;
   box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.collar-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .collar-card .cart-hover {
@@ -848,4 +871,80 @@ body {
   100% {
     transform: translateX(-50%);
   }
+}
+
+/* --- ANIMATION KEYFRAMES --- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Float in from top */
+@keyframes slideDown {
+  from { transform: translateY(-100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.slider-container.slide-down {
+  animation: slideDown 1.5s ease forwards;
+}
+
+/* Slide in from right */
+@keyframes slideRight {
+  from { transform: translateX(100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-overlay.slide-from-right,
+.arrow-controls.slide-from-right {
+  animation: slideRight 1.5s ease forwards;
+}
+
+/* Zoom in */
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.search-wrapper.zoom-in,
+.slider-dots.zoom-in {
+  animation: zoomIn 1.5s ease forwards;
+}
+
+/* Slide in from left */
+@keyframes slideLeft {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.section-header.slide-from-left {
+  animation: slideLeft 1.5s ease forwards;
+}
+
+/* Expand divider from center */
+.section-divider.expand-center {
+  transform: scaleX(0);
+  transform-origin: center;
+  animation: expandDivider 1.5s ease forwards;
+}
+
+@keyframes expandDivider {
+  from { transform: scaleX(0); opacity: 0; }
+  to { transform: scaleX(1); opacity: 1; }
+}
+
+/* Pop in product cards */
+@keyframes popIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.product-card.pop-in {
+  animation: popIn 1.5s ease forwards;
 }
