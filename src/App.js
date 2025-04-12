@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 import Collections from "./components/Collections";
+import BlogsEvents from "./components/BlogsEvents";
 import Cart from "./components/Cart";
 import { CartProvider } from "./CartContext";
 
@@ -42,6 +43,7 @@ function App() {
             <Route path="/login" element={!user ? <Login /> : <Navigate to="/profile" />} />
             <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/profile" />} />
             <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" />} />
+            <Route path="/blogs-events" element={<BlogsEvents />} />
           </Routes>
         </Router>
       </CartProvider>
