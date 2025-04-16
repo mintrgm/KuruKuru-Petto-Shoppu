@@ -1,0 +1,442 @@
+.axolotl-page {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+/* Background section */
+.axolotl-bg-top {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Content Layer */
+.axolotl-content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-50%);
+}
+
+.left-text {
+  padding-left: 8%;
+  flex: 1;
+}
+
+.left-text .title {
+  font-family: 'Walter Turncoat', cursive;
+  font-size: 10rem;
+  -webkit-text-stroke: 0.5px #1a2553;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+.left-text .title:hover {
+  color: #1a2553;
+  -webkit-text-stroke: 0.5px #ffffff;
+  transform: scale(1.1);
+}
+
+.price-with-cart {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-family: 'Single Day', cursive;
+  font-size: 4rem;
+}
+
+.inline-cart-icon {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.inline-cart-icon:hover {
+  transform: scale(1.5);
+}
+
+.purchase-btn {
+  font-family: 'Single Day', cursive;
+  padding: 14px 36px;
+  background-color: #00ccff;
+  color: rgb(0, 0, 0);
+  border: 2px solid #000;
+  border-radius: 50px;
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.purchase-btn:hover {
+  transform: scale(1.1);
+  color: #00ccff;
+  background-color: #000000;
+  border: 2px solid #00ccff;
+}
+
+.right-image {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.right-image img {
+  height: 1000px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  object-fit: contain;
+  animation: floatOverlay 5s ease-in-out infinite;
+}
+
+.axolotl-detail-gallery-section {
+  width: 100%;
+  background: linear-gradient(to bottom, #221E4F, #000000); 
+  color: white;
+  padding: 50px 0;
+  box-sizing: border-box;
+}
+
+.gallery-side-by-side {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+.gallery-left-img {
+  flex: 1;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-left-img img {
+  height: 1000px;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+  animation: floatOverlay 5s ease-in-out infinite;
+}
+
+.gallery-right-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gallery-description {
+  text-align: right;
+  padding-right: 100px;
+}
+
+.gallery-description h2 {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  color: #68c2f7;
+  font-family: 'Walter Turncoat', cursive;
+  text-shadow: 4px 4px 8px rgba(4, 50, 77, 0.2);
+}
+
+.gallery-description p {
+  font-family: 'Single Day', cursive;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.main-preview-img {
+  width: 835px;
+  height: 500px; 
+}
+
+.main-preview-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 25px;
+  border: 2px solid #ffffff;
+  background: #111;
+  padding: 0; 
+  box-shadow: 8px 8px 15px rgba(255, 255, 255, 0.2);
+  display: block;
+}
+
+.preview-thumbnails {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.preview-thumb {
+  width: 190px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.preview-thumb:hover,
+.preview-thumb.active-thumb {
+  border-color: #00ccff;
+  transform: scale(1.1);
+}
+
+.essentials-section {
+  padding: 60px 5%;
+}
+
+.essentials-title {
+  font-family: 'Walter Turncoat', cursive;
+  text-shadow: 4px 4px 8px rgba(4, 50, 77, 0.2);
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.essentials-divider {
+  height: 2px;
+  background-color: #ffffff;
+  border: none;
+  margin-bottom: 40px;
+}
+
+.essentials-product-list {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.essentials-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Single Day', cursive;
+  padding: 20px;
+  max-width: 400px;
+  flex: 1;
+}
+
+.essentials-img-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.essentials-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 8px 8px 14px rgba(255, 255, 255, 0.3);
+  aspect-ratio: 1 / 1; 
+}
+
+.essentials-img-container:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+} 
+
+.essentials-card {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Single Day', cursive;
+  padding: 20px;
+  max-width: 400px;
+  flex: 1;
+}
+
+.essentials-cart-icon {
+  position: absolute;
+  top: 10px;
+  left: 210px; 
+  width: 45px;
+  height: 45px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.essentials-cart-icon:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.essentials-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.essentials-name {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.essentials-price {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.essentials-qty {
+  font-size: 1rem;
+  padding: 6px 14px;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  font-family: 'Single Day', cursive;
+}
+
+.axoknowledge-section {
+  padding: 50px 30px;
+  box-sizing: border-box;
+}
+
+.axoknowledge-header {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 60px;
+}
+
+.axoknowledge-title {
+  font-family: 'Walter Turncoat', cursive;
+  font-size: 3.5rem; 
+  color: #68c2f7;
+  text-shadow: 4px 4px 8px rgba(25, 72, 110, 0.2);
+  margin-bottom: 20px;
+  white-space: nowrap;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.axoknowledge-desc {
+  font-family: 'Single Day', cursive;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+.axoknowledge-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.axoknowledge-card {
+  width: 500px;
+  text-align: center;
+  font-family: 'Walter Turncoat', cursive;
+}
+
+.axoknowledge-img-container {
+  width: 100%;
+  height: 350px;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #000000;
+  box-shadow: 8px 8px 10px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.axoknowledge-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.axoknowledge-img-container:hover{
+  transform: scale(1.08);
+}
+
+.axoknowledge-img-container:hover .axoknowledge-img {
+  transform: scale(1.08);
+}
+
+.axoknowledge-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(42, 62, 110, 0.7);
+  color: white;
+  font-family: 'Single Day', cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.axoknowledge-img-container:hover .axoknowledge-overlay {
+  opacity: 1;
+}
+
+.axoknowledge-name {
+  font-size: 1.6rem;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.axoknowledge-btn {
+  margin-top: 12px;
+  font-size: 1.2rem;
+  background-color: #4f7aa3;
+  color: #000000;
+  border: 2px solid #ffffff;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-family: 'Single Day', cursive;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.axoknowledge-btn:hover {
+  background-color: #000000;
+  border: 2px solid #4f7aa3;
+  color: #4f7aa3;
+  transform: scale(1.05);
+}
