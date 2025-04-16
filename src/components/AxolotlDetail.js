@@ -54,23 +54,9 @@ const AxolotlDetail = () => {
     },
   ];
 
-  const eventProducts = [
-    {
-      name: "The Best Axolotl Care Guide in the World",
-      img: axolotl2,
-      description: "The Axolotl starter pack you never knew you needed. From water temp to ninja hiding caves!"
-    },
-    {
-      name: "How to Cycle an Aquarium",
-      img: axolotl3,
-      description: "Your tank is basically a mini poop ecosystem. Here’s how to not kill your fishy friend."
-    },
-    {
-      name: "How to Cycle an Aquarium",
-      img: axolotl4,
-      description: "Vibes, views, and veggie sandwiches. Need we say more?"
-    }
-  ];
+  const handlePurchaseNow = () => {
+    navigate("/payment");
+  };
 
   return (
     <>
@@ -99,7 +85,9 @@ const AxolotlDetail = () => {
                 }
               />
             </div>
-            <button className="purchase-btn">Purchase Now</button>
+            <button className="purchase-btn" onClick={handlePurchaseNow}>
+              Purchase Now
+            </button>
           </div>
 
           <div className="right-image">
