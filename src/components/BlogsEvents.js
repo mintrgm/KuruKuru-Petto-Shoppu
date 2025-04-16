@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./BlogsEvents.css";
 import bgCats from "../assets/004.png";
 import expArrow from "../assets/exparrow0.png";
-import img1 from "../assets/28.jpeg";
-import img2 from "../assets/29.jpeg";
 import img3 from "../assets/1000.png";
 import img4 from "../assets/2000.jpeg";
 import img5 from "../assets/3000.png";
