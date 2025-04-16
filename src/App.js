@@ -6,8 +6,10 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 import Collections from "./components/Collections";
+import AxolotlDetail from "./components/AxolotlDetail";
 import BlogsEvents from "./components/BlogsEvents";
 import Cart from "./components/Cart";
+import PaymentPage from "./components/PaymentPage";
 import { CartProvider } from "./CartContext";
 
 // Create Auth Context
@@ -40,10 +42,12 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/collections" element={<Collections />} />
+            <Route path="/product/axolotl" element={<AxolotlDetail />} />
             <Route path="/login" element={!user ? <Login /> : <Navigate to="/profile" />} />
             <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/profile" />} />
             <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" />} />
             <Route path="/blogs-events" element={<BlogsEvents />} />
+            <Route path="/payment" element={<PaymentPage />} />
           </Routes>
         </Router>
       </CartProvider>
