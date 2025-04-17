@@ -1,0 +1,86 @@
+.payment-container {
+    background-color: #0e1525;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    padding: 2rem;
+  }
+  
+  .level-title {
+    color: #a47dfb;
+    font-size: 1.5rem;
+  }
+  
+  .step-tracker {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+    color: #ccc;
+  }
+  
+  .step.active {
+    color: white;
+    font-weight: bold;
+  }
+  
+  .payment-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .shipping-box, .invoice-box, .products-box, .footer-box {
+    background-color: #2f3654;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .promo-section input {
+    width: 60%;
+    padding: 0.4rem;
+    margin-right: 0.5rem;
+  }
+  
+  .promo-section button {
+    padding: 0.4rem 1rem;
+    background-color: #192346;
+    color: white;
+    border: none;
+    border-radius: 6px;
+  }
+  
+  .product-item {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .product-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  .total-amount {
+    color: lightgreen;
+  }
+  
+  .footer-box {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .proceed-btn {
+    background-color: #192346;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
