@@ -1,12 +1,308 @@
-.home {
-    background-color: #F0F1E3;
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Single Day", sans-serif;
+  }
+  
+  :root {
+    --pastel-pink: #ad8671;
+    --pastel-blue: #717dad;
+  }
+  
+  .light-theme {
+    --default-bg: var(--pastel-pink);
+  }
+  
+  .dark-theme {
+    --default-bg: var(--pastel-blue);
+  }
+  
+  #experience {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  
+  #experience-canvas {
+    position: absolute; 
+    z-index: 0; 
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Utility */
+  .hidden {
+    display: none;
+  }
+  
+  /* Loading Screen */
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--default-bg);
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: center; 
+    border: 12px solid white;
+    z-index: 1000;
+  }
+  
+  .loading-text {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .enter-button {
+    font-size: 36px;
+    background: var(--default-bg);
+    background-color: #000000;
+    border: 3px solid white;
+    border-radius: 50px;
+    color: white;
+    padding: 8px 20px;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  
+  .enter-button:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+    color: var(--default-bg);
+    border: 3px solid rgb(3, 3, 3);
+  }
+  
+  .instructions {
+    color: white;
+    font-size: 26px;
+    margin-top: 30px;
+    text-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Modals */
+  .modal-bg-overlay {
+    z-index: 750;
+    height: 100%;
+    width: 100%;
+    background-color: #31313159;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  
+  .modal {
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 500px;
+    background-color: #9eb7d8;
+    border: 2px solid #000000;
+    border-radius: 25px;
+    color: #000000;
+  }
+  
+  .modal-wrapper {
+    padding: 12px;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgb(0, 0, 0);
+  }
+  
+  .modal-title {
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 32px;
+  }
+  
+  .modal-exit-button {
+    background: transparent;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 50px;
+    color: rgb(0, 0, 0);
+    padding: 0px 10px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-exit-button:hover {
+    transform: scale(1.05);
+    background: #fff;
+    color: var(--default-bg);
+  }
+  
+  .modal-project-description {
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+  
+  .modal-project-visit-button {
+    background: white;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 50px;
+    color: var(--default-bg);
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-project-visit-button:hover {
+    background: var(--default-bg);
+    color: rgb(0, 0, 0);
+    transform: scale(1.05);
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 1rem;
+  }
+  
+  .gallery-item {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    object-fit: cover;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+  }
+  
+  .gallery-item:hover {
+    transform: scale(1.05);
+  }  
+  
+  .theme-mode-toggle-button,
+  .audio-toggle-button {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: background-color 0.3s ease;
   }
 
-  .home-image {
-    margin-top: 100px;
+  .icon {
+    width: 50px;
+    height: 50px;
   }
 
- 
+  .second-icon,
+  .second-icon-two {
+    display: none;
+  }
+  
+  /* Mobile Controls */
+  .mobile-control {
+    z-index: 500;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--default-bg);
+    height: 64px;
+    width: 64px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid white;
+    padding: 8px;
+  }
+  
+  .left-arrow {
+    transform: translate(calc(-100% - 32px), -50%) rotate(270deg);
+  }
+  
+  .right-arrow {
+    transform: translate(32px, -50%) rotate(90deg);
+  }
+  
+  .up-arrow {
+    transform: translate(-50%, calc(-100% - 32px)) rotate(0deg);
+  }
+  
+  .down-arrow {
+    transform: translate(-50%, 32px) rotate(180deg);
+  }
+  
+  @media (max-width: 1100px) {
+    .mobile-control {
+      display: flex;
+    }
+  }
+  
+  @media (max-width: 519px) {
+    .enter-button,
+    .instructions {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 396px) {
+    .modal-title {
+      font-size: 26px;
+    }
+  }
+  
+
+  .bottom-right-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+  }
+  
+  .floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    z-index: 9999;
+    pointer-events: auto;
+  }  
+
+  .first-icon,
+  .second-icon,
+  .first-icon-two,
+  .second-icon-two {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 6px;
+  }
