@@ -62,11 +62,11 @@ const BlogsEvents = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const prevSlide = () => {
+  const _prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + sliderCards.length) % sliderCards.length);
   };
 
-  const nextSlide = () => {
+  const _nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % sliderCards.length);
   };
 
