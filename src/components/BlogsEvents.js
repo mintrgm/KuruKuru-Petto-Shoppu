@@ -62,10 +62,12 @@ const BlogsEvents = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // eslint-disable-next-line no-unused-vars
   const _prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + sliderCards.length) % sliderCards.length);
   };
 
+  // eslint-disable-next-line no-unused-vars
   const _nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % sliderCards.length);
   };
