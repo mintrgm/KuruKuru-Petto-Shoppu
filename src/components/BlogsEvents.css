@@ -1,0 +1,395 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .blogs-events-page {
+    background-color: #FBE3CF;
+    min-height: 100vh;
+    padding-bottom: 100px;
+  }  
+
+  .hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 150px 0 150px 80px; 
+    flex-wrap: wrap;
+    position: relative;
+  }
+  
+  .hero-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .hero-text {
+    flex: 1;
+    max-width: 1000px;
+    padding-right: 30px;
+    padding-top: 100px;
+  }
+  
+  .hero-text h1 {
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 3.75rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #1a2553;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hero-text p {
+    font-family: 'Single Day', cursive;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #252525;
+    margin-bottom: 60px;
+  }
+  
+  .hero-btn {
+    background-color: #8A9CBD;
+    color: #000000;
+    padding: 10px 35px;
+    border-radius: 50px;
+    border: 2px solid #000000;
+    cursor: pointer;
+    font-family: 'Single Day', cursive;
+    font-size: 1.5rem;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hero-btn:hover {
+    background-color: #ffffff;
+    color: #8A9CBD;
+    transform: scale(1.05);
+  }
+  
+  .hero-image {
+    flex: 1;
+    max-width: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding: 0; 
+  }
+  
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-right: 0; 
+    margin-top: -100px;
+    animation: floatOverlay 5s ease-in-out infinite;
+  }
+  
+  .hero-section1 {
+    padding: 100px 80px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .hero-content-wrapper1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1600px;
+  }
+  
+  .hero-image1 {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: -200px; 
+  }
+  
+  .hero-image1 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-right: 0; 
+    margin-top: -100px;
+    animation: floatOverlay 5s ease-in-out infinite;
+  }
+  
+  .hero-text1 {
+    flex: 1;
+    max-width: 700px;
+    padding-left: 50px;
+    font-family: 'Walter Turncoat', cursive;
+  }
+  
+  .hero-text1 h1 {
+    font-size: 3rem;
+    color: #1a2553;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-text1 p {
+    font-family: 'Single Day', cursive;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #252525;
+  }
+
+  .hero-image2 {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: -250px;
+  }
+  
+  .hero-image2 img {
+    width: 100%;
+    object-fit: contain;
+    margin-top: -100px;
+    animation: floatOverlay 5s ease-in-out infinite;
+  }
+  
+  /* ========== Blog Slider ========== */
+  .card-slider {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    scroll-margin-top: 0; 
+    padding: 0 !important; 
+    margin: 0 !important;
+  }  
+  
+  .slider-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .slider-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  .slider-card {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-content {
+    background-color: #2a3e6e;
+    border-radius: 20px;
+    border: 2px solid #000000;
+    padding: 30px 40px;
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    width: 85%;
+    max-width: 1000px;
+    height: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .card-content:hover {
+    transform: scale(1.2);
+  }
+  
+  .circle-img img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    background-color: #b88a91; 
+  }
+  
+  .card-text {
+    flex: 1;
+    color: white;
+  }
+  
+  .card-text h2 {
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 2rem;
+    margin-bottom: 12px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-text p {
+    font-family: 'Single Day', cursive;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .events-heading {
+    font-size: 10rem;
+    text-align: center;
+    color: #a76f70;
+    font-family: 'Walter Turncoat', cursive;
+    -webkit-text-stroke: 1px #1a2553;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .events-heading:hover {
+    color: #7591bb;
+    -webkit-text-stroke: 1px #1a2553;
+    transform: scale(1.03);
+  }
+  
+  /* ======== EVENTS Product Section ======== */
+  .events-products-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 80px;
+    position: relative;
+  }
+  
+  .event-product-wrapper {
+    display: flex;
+    gap: 80px;
+    transition: transform 0.5s ease;
+  }
+  
+  .event-product-card {
+    width: 800px;
+    height: 420px;
+    transition: transform 0.5s ease;
+  }
+  
+  .event-image-container {
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 40px;
+    position: relative;
+    border: 3px solid #000;
+    box-shadow: 8px 8px 10px rgba(0,0,0,0.2);
+  }
+  
+  .event-product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  
+  .event-product-card:hover .event-product-img {
+    transform: scale(1.1);
+  }
+  
+  .event-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(42, 62, 110, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    color: #fff;
+    font-family: 'Single Day', cursive;
+    font-size: 2rem;
+    padding: 20px;
+    text-align: center;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(20px);
+  }
+  
+  .event-product-card:hover .event-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .event-product-details {
+    flex: 1;
+    padding: 30px;
+    font-family: 'Walter Turncoat', cursive;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .event-product-details h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1a2553;
+  }
+  
+  .join-btn {
+    background-color: #BD8A8B;
+    color: #000;
+    border: 2px solid #000;
+    padding: 8px 20px;
+    font-size: 1.5rem;
+    font-family: 'Single Day', cursive;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 8px 8px 10px rgba(0,0,0,0.2);
+  }
+  
+  .join-btn:hover {
+    background-color: #000000;
+    color: #BD8A8B;
+    transform: scale(1.05);
+  }
+  
+  .arrow {
+    cursor: pointer;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: transform 0.3s ease;
+  }
+  
+  .arrow img {
+    width: 24px;
+  }
+  
+  .arrow.left {
+    left: 20px;
+  }
+  
+  .arrow.right {
+    right: 20px;
+  }
+  
+  .arrow.left img.flipped {
+    transform: rotate(180deg);
+  }
+  
+  .arrow:hover {
+    transform: translateY(-50%) scale(1.1);
+    background-color: #BD8A8B;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  

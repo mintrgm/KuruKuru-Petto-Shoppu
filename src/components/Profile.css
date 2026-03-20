@@ -1,0 +1,166 @@
+body {
+    background: url('../assets/woof.png') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #010817;
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Profile Header - Profile Picture Separate from Box */
+  .profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 90%;
+    margin-top: 150px;
+    margin-bottom: 50px;
+  }
+  
+  .profile-image-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-pic-large {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 3px solid rgb(255, 255, 255);
+  }
+
+  .profile-info-box {
+    background: #B2C8FF;
+    padding: 20px 70px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 25px;
+    width: 100%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .profile-title {
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .profile-details {
+    font-family: 'Single Day', cursive;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Horizontal Line */
+  .sections-divider {
+    border: none;
+    height: 2px;
+    background: black;
+    margin: 10px 0;
+  }
+  
+  /* Shipping Address Box */
+  .address-box {
+    background: #92A4C5;
+    padding: 20px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 25px;
+    width: 100%;
+    max-width: 90%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 50px;
+  }
+
+  .address-title {
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .address-details {
+    font-family: 'Single Day', cursive;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .address-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .address-list li {
+    width: 50%;
+    padding: 15px 15px;
+    box-sizing: border-box;
+  }
+
+  .order-title {
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Order History Box */
+  .order-history-box {
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 1.75rem;
+    background: #7d94c1;
+    padding: 20px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 25px;
+    width: 100%;
+    max-width: 90%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Order Items */
+  .order-group {
+    margin-top: 10px;
+    padding: 10px;
+    background: #8EAED7;
+    border-radius: 10px;
+  }
+  
+  .order-date {
+    font-weight: bold;
+    background: #7d94c1;
+    padding: 5px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  .order-items {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .order-item {
+    width: 80px;
+    height: 100px;
+    background: white;
+    border-radius: 10px;
+  }
+  
+  /* Edit Icon */
+  .edit-icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
